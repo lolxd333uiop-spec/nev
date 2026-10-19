@@ -1,24 +1,25 @@
-cmake_minimum_required(VERSION 3.21)
-set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if ("${CMAKE_SYSTEM_NAME}" STREQUAL "iOS" OR IOS)
-    set(CMAKE_OSX_ARCHITECTURES "arm64")
-else()
-    set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
-endif()
-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+## Input Buffer
 
-project(BufferMod VERSION 1.0.0)
+Makes tight timings easier by remembering clicks that you hit too early!
 
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
-add_library(${PROJECT_NAME} SHARED ${SOURCES})
+## What it does
 
-if (NOT DEFINED ENV{GEODE_SDK})
-    message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")
-else()
-    message(STATUS "Found Geode: $ENV{GEODE_SDK}")
-endif()
+- **Cube, Ball, Robot, Spider:** tap slightly before landing or before an orb, release, and the click fires the moment you touch the surface or ring.
+- **Ship, UFO, Swing:** very short taps are stretched to a minimum length so quick inputs come out consistent.
+- **Wave:** choose between three styles: Min Hold, Min Gap or Grid snap.
+- **2 Player:** both icons are buffered using the same rules.
 
-add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
+## Settings
 
-setup_geode_mod(${PROJECT_NAME})
+Open them from Geode's mod list, or press the **Buffer** button on the pause menu. Hotkeys while in a level:
+
+- **F6** cycle the buffer window
+- **F7 / F8** TPS up / down
+- **F9** debug logging
+- **F10** wave mode
+
+Set the TPS option to match the TPS you use in your other tools, or the buffer window will be the wrong size.
+
+## Note
+
+This is an input assist. Use it for practice and fun, not for leaderboard or submitted runs.

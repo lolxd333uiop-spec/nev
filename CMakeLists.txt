@@ -1,5 +1,64 @@
-## v1.0.1
-- Fixed first clicks being dropped after death, restart or checkpoint.
-- Fixed dual-portal sections so held-back inputs reach both icons.
-- Fixed wave Grid quick taps cancelling out. Taps now hold at least one cell.
-- Wave Grid and Min Gap are skipped for about 16 ticks after a spawn, so start-pos clicks go straight through.
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Macos be like
+**/.DS_Store
+
+# Cache files for Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Ignore build folders
+**/build
+# Ignore platform specific build folders
+build-*/
+
+# Workspace files are user-specific
+*.sublime-workspace
+
+# ILY vscode
+**/.vscode
+
+# Local History for Visual Studio Code
+.history/
+
+# clangd
+.cache/
+
+# Visual Studio
+.vs/
+
+# CLion
+.idea/
+/cmake-build-*/
